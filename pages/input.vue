@@ -44,13 +44,13 @@ export default Vue.extend({
         };
     },
     methods: {
-        onEvent(ev: UIEvent) {
+        onEvent(ev: UIEvent): void {
             this.addTodo(this.newTodo);
         },
-        addTodo(title: string) {
+        addTodo(title: string): void {
             this.todos.push(title);
         },
-        delTodo() {
+        delTodo(): void {
             if (this.todos.length > 0) {
                 this.todos.splice(0, 1);
             }
