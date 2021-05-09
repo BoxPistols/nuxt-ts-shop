@@ -1,4 +1,18 @@
 export default {
+  router: {
+    // for Error
+    // extendRoutes(routes, resolve) {
+    //   routes.push({
+    //     name: 'custom',
+    //     path: '*',
+    //     component: resolve(__dirname, 'pages/index.vue'),
+    //   })
+    // },
+  },
+  // for Netlify
+  generate: {
+    crawler: false,
+  },
   // Disable server-side rendering: https://go.nuxtjs.dev/ssr-mode
   ssr: false,
 
@@ -6,7 +20,7 @@ export default {
   head: {
     title: 'nuxt-ts-shop',
     htmlAttrs: {
-      lang: 'en',
+      lang: 'ja',
     },
     meta: [
       { charset: 'utf-8' },
