@@ -10,11 +10,18 @@
                     aria-label="Full name"
                 />
                 <button
-                    @click.prevent="onEnter"
+                    @click.prevent="onEvent"
                     class="flex-shrink-0 bg-teal-500 hover:bg-teal-700 border-teal-500 hover:border-teal-700 text-sm border-4 text-gray py-1 px-2 rounded"
                     type="button"
                 >
                     Add
+                </button>
+                <button
+                    @click.prevent="delTodo"
+                    class="flex-shrink-0 bg-teal-500 hover:bg-teal-700 border-teal-500 hover:border-teal-700 text-sm border-4 text-gray py-1 px-2 rounded"
+                    type="button"
+                >
+                    Del
                 </button>
             </div>
         </form>
@@ -37,11 +44,16 @@ export default Vue.extend({
         };
     },
     methods: {
-        onEnter(ev: UIEvent) {
+        onEvent(ev: UIEvent) {
             this.addTodo(this.newTodo);
         },
         addTodo(title: string) {
             this.todos.push(title);
+        },
+        delTodo() {
+            if (this.todos.length > 0) {
+                this.todos.splice(0, 1);
+            }
         },
     },
 });
